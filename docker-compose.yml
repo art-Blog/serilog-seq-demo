@@ -1,0 +1,14 @@
+version: "3"
+services:
+  seq_server:
+    image: datalust/seq
+    restart: always
+    container_name: seq
+    hostname: seq
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - 8090:80
+      - 5341:5341
+    volumes:
+      - d:/docker-volumes/seq/data:/data

@@ -1,0 +1,32 @@
+/* 設定 zindex */
+@mixin set-zindex($position, $zindexNum) {
+	@if $position==relative {
+		position: relative;
+		z-index: map-get($zindex, $zindexNum);
+	}
+	@else if $position==fixed {
+		position: fixed;
+		z-index: map-get($zindex, $zindexNum);
+	}
+	@else if $position==absolute {
+		position: absolute;
+		z-index: map-get($zindex, $zindexNum);
+	}
+	@else if $position==sticky {
+		position: sticky;
+		z-index: map-get($zindex, $zindexNum);
+	}
+	@else {
+		position: static;
+		z-index: map-get($zindex, $zindexNum);
+	}
+}
+
+
+$zindex: (
+	modal: 100,
+	navBarHeader: 50,
+	ground: 1,
+	base: 0,
+	under: -1
+);

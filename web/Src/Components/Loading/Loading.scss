@@ -1,0 +1,16 @@
+@import "~Styles/Helper/_constant.scss";
+
+.loadingMask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.loadingContainer {
+    width: 360px;
+    position: relative;
+    background-color: rgba($gray-500, 0.5);
+    border-radius: 12px;
+}

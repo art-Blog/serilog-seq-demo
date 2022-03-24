@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <RootNamespace>serilog_seq_demo.Core</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\serilog-seq-demo.DataClass\serilog-seq-demo.DataClass.csproj" />
+      <ProjectReference Include="..\serilog-seq-demo.DataServices\serilog-seq-demo.DataServices.csproj" />
+    </ItemGroup>
+
+</Project>

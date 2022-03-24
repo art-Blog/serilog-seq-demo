@@ -1,0 +1,3 @@
+﻿<% for (var chunk in htmlWebpackPlugin.files.js) { %>
+<script src="<%=htmlWebpackPlugin.files.js[chunk] %>"<% if(htmlWebpackPlugin.options.isDefer){ %> defer="<%=htmlWebpackPlugin.options.isDefer %>"<%}%><% if(htmlWebpackPlugin.options.isAsync){%> async="<%=htmlWebpackPlugin.options.isAsync %>" <%}%>></script>
+<%}%>

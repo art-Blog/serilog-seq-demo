@@ -1,0 +1,47 @@
+{
+    "env": {
+        "development": {
+            "presets": [
+                "@babel/preset-env"
+            ],
+            "plugins": [
+                ["@babel/plugin-transform-runtime"],
+                ["@babel/plugin-proposal-export-default-from"],
+            ]
+        },
+        "production": {
+            "presets": [
+                [
+                    "@babel/preset-env",
+                    {
+                        "targets": [
+                            "defaults",
+                            "not ie <= 9"
+                        ],
+                        "debug": false,
+                        "useBuiltIns": "usage",
+                        "corejs": 3,
+                        "modules": false
+                    }
+                ]
+            ],
+            "plugins": [
+                ["@babel/plugin-transform-runtime"],
+                ["@babel/plugin-proposal-export-default-from"],
+            ]
+        },
+        "test": {
+            "presets": [
+                [
+                    "@babel/preset-env",
+                    {
+                        "modules": "commonjs"
+                    }
+                ]
+            ],
+            "plugins": [
+                ["@babel/plugin-transform-runtime"],
+            ]
+        }
+    }
+}

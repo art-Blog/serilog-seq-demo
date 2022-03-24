@@ -1,0 +1,19 @@
+@import '~Styles/Helper/_constant.scss';
+
+.searchResult{
+    border-bottom: 1px solid $gray-500;
+}
+.searchProductList {
+    margin-top: 30px;
+    background-color: $gray-100;
+}
+.sidebar {
+    cursor: pointer;
+}
+.searchNoResult {
+    width: 200px;
+    min-height: 495px;
+    line-height: 2.5rem;
+    margin: 0 auto;
+    text-align: center;
+}

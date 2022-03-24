@@ -1,0 +1,4 @@
+﻿<% for (var chunk in htmlWebpackPlugin.files.css) { %>
+<% if(htmlWebpackPlugin.files.css[chunk].length){ %>
+<link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css[chunk] %>">
+<%}%><%}%>

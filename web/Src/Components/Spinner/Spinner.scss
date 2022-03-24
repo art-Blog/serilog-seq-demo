@@ -1,0 +1,62 @@
+@import "~Styles/Helper/_constant.scss";
+@import '~Styles/Helper/_zindex.scss';
+@import '~Styles/Helper/_mixin.scss';
+
+.spinnerStyle {
+  background-color: $primary-300;
+  width: 15px;
+  height: 15px;
+  margin: 2px;
+  border-radius: 100%;
+  display: inline-block;
+  animation-name: v-pulseStretchDelay;
+  animation-duration: 0.75s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.2,.68,.18,1.08);
+  animation-fill-mode: both
+}
+.spinnerDelay1 {
+  animation-delay: 0.12s;
+}
+.spinnerDelay2 {
+  animation-delay: 0.24s;
+}
+.spinnerDelay3 {
+  animation-delay: 0.36s;
+}
+@-webkit-keyframes v-pulseStretchDelay
+{
+    0%,
+    80%
+    {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-opacity: 1;             
+                opacity: 1;
+    }
+    45%
+    {
+        -webkit-transform: scale(0.1);
+                transform: scale(0.1);
+        -webkit-opacity: 0.7;             
+                opacity: 0.7;
+    }
+}
+@keyframes v-pulseStretchDelay
+{
+    0%,
+    80%
+    {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-opacity: 1;             
+                opacity: 1;
+    }
+    45%
+    {
+        -webkit-transform: scale(0.1);
+                transform: scale(0.1);
+        -webkit-opacity: 0.7;             
+                opacity: 0.7;
+    }
+}

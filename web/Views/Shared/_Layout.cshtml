@@ -1,0 +1,22 @@
+﻿@{
+    var controllerName = this.ViewContext.RouteData.Values["controller"]?.ToString();
+    var actionName = this.ViewContext.RouteData.Values["action"]?.ToString();
+    var partialCSS = $@"~/Views/Bundle/_{controllerName}_{actionName}_Css.cshtml";
+    var partialJS = $@"~/Views/Bundle/_{controllerName}_{actionName}_Js.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - seq_demo</title>
+    <partial name="@partialCSS" optional="true"/>
+    @await RenderSectionAsync("styles", required: false)
+</head>
+<body>
+    @RenderBody()
+    <partial name="@partialJS" optional="true"/>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

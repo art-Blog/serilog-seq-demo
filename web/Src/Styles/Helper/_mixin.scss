@@ -1,0 +1,30 @@
+@import '~Styles/Helper/_constant.scss';
+
+/* 斷點 */
+@mixin breakpointMinWidth($width) {
+    @media (min-width: $width + px) {
+        @content;
+    }
+}
+
+@mixin breakpointMaxWidth($width) {
+    @media (max-width: $width + px) {
+        @content;
+    }
+}
+
+@mixin setBrightness($value: 1.08) {
+    filter: brightness($value);
+}
+
+@mixin setLinkHover($color: $primary-300) {
+    color: $color;
+}
+
+
+/* 設置元素水平置中 */
+@mixin setElementCenter($width) {
+    max-width: $width + px;
+    margin-left: auto;
+    margin-right: auto;
+}

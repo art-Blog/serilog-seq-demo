@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <RootNamespace>serilog_seq_demo.Adapter</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\serilog-seq-demo.Common.Maria\serilog-seq-demo.Common.Maria.csproj" />
+      <ProjectReference Include="..\serilog-seq-demo.Common.Utility\serilog-seq-demo.Common.Utility.csproj" />
+      <ProjectReference Include="..\serilog-seq-demo.DataClass\serilog-seq-demo.DataClass.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+        <HintPath>C:\Users\art.huang.SENSENGO\.nuget\packages\mysql.data\8.0.28\lib\net6.0\MySql.Data.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.20.0" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "website", "website", "{EE932851-532A-4095-900B-7F265B45CB74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web", "web\web.csproj", "{30971BDA-171D-4433-A266-D7E18A8ABA53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{EB03DC35-58D5-4FF3-9328-288269AB400E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serilog-seq-demo.Core", "serilog-seq-demo.Core\serilog-seq-demo.Core.csproj", "{FD91A302-1496-4E7C-9377-A91AE41BAAB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serilog-seq-demo.DataClass", "serilog-seq-demo.DataClass\serilog-seq-demo.DataClass.csproj", "{48607088-ABB0-4D04-BF3F-06B412B3131D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serilog-seq-demo.DataServices", "serilog-seq-demo.DataServices\serilog-seq-demo.DataServices.csproj", "{FC7EB292-30E9-4980-90FB-352AF7852F05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serilog-seq-demo.Adapter", "serilog-seq-demo.Adapter\serilog-seq-demo.Adapter.csproj", "{A6625A9F-9CCA-4BC6-8F8C-893EA980370E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonLibrary", "CommonLibrary", "{DA9201C7-E04B-4162-B7C8-EBBBDBC602C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serilog-seq-demo.Common.Maria", "serilog-seq-demo.Common.Maria\serilog-seq-demo.Common.Maria.csproj", "{03EDA50C-14D7-47DB-9136-3370DE9FC49F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serilog-seq-demo.Common.Utility", "serilog-seq-demo.Common.Utility\serilog-seq-demo.Common.Utility.csproj", "{AB98FCAE-48BE-4C7D-B93E-B42D59BF2630}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B023EC9-197B-4A46-89E3-511FB5FF9BBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B023EC9-197B-4A46-89E3-511FB5FF9BBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B023EC9-197B-4A46-89E3-511FB5FF9BBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B023EC9-197B-4A46-89E3-511FB5FF9BBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30971BDA-171D-4433-A266-D7E18A8ABA53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30971BDA-171D-4433-A266-D7E18A8ABA53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30971BDA-171D-4433-A266-D7E18A8ABA53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30971BDA-171D-4433-A266-D7E18A8ABA53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD91A302-1496-4E7C-9377-A91AE41BAAB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD91A302-1496-4E7C-9377-A91AE41BAAB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD91A302-1496-4E7C-9377-A91AE41BAAB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD91A302-1496-4E7C-9377-A91AE41BAAB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48607088-ABB0-4D04-BF3F-06B412B3131D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48607088-ABB0-4D04-BF3F-06B412B3131D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48607088-ABB0-4D04-BF3F-06B412B3131D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48607088-ABB0-4D04-BF3F-06B412B3131D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC7EB292-30E9-4980-90FB-352AF7852F05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC7EB292-30E9-4980-90FB-352AF7852F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC7EB292-30E9-4980-90FB-352AF7852F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC7EB292-30E9-4980-90FB-352AF7852F05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6625A9F-9CCA-4BC6-8F8C-893EA980370E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6625A9F-9CCA-4BC6-8F8C-893EA980370E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6625A9F-9CCA-4BC6-8F8C-893EA980370E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6625A9F-9CCA-4BC6-8F8C-893EA980370E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03EDA50C-14D7-47DB-9136-3370DE9FC49F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03EDA50C-14D7-47DB-9136-3370DE9FC49F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03EDA50C-14D7-47DB-9136-3370DE9FC49F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03EDA50C-14D7-47DB-9136-3370DE9FC49F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB98FCAE-48BE-4C7D-B93E-B42D59BF2630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB98FCAE-48BE-4C7D-B93E-B42D59BF2630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB98FCAE-48BE-4C7D-B93E-B42D59BF2630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB98FCAE-48BE-4C7D-B93E-B42D59BF2630}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{30971BDA-171D-4433-A266-D7E18A8ABA53} = {EE932851-532A-4095-900B-7F265B45CB74}
+		{FD91A302-1496-4E7C-9377-A91AE41BAAB3} = {EB03DC35-58D5-4FF3-9328-288269AB400E}
+		{48607088-ABB0-4D04-BF3F-06B412B3131D} = {EB03DC35-58D5-4FF3-9328-288269AB400E}
+		{FC7EB292-30E9-4980-90FB-352AF7852F05} = {EB03DC35-58D5-4FF3-9328-288269AB400E}
+		{A6625A9F-9CCA-4BC6-8F8C-893EA980370E} = {EB03DC35-58D5-4FF3-9328-288269AB400E}
+		{03EDA50C-14D7-47DB-9136-3370DE9FC49F} = {DA9201C7-E04B-4162-B7C8-EBBBDBC602C7}
+		{AB98FCAE-48BE-4C7D-B93E-B42D59BF2630} = {DA9201C7-E04B-4162-B7C8-EBBBDBC602C7}
+	EndGlobalSection
+EndGlobal

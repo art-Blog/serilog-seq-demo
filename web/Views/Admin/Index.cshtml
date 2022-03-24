@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Admin";
+}
+
+<div id="adminContainer"></div>
+@section Scripts {
+    <script>
+        Vue.createApp(Components.AdminContainer, {
+            model: @Html.Raw(Json.Serialize(Model))
+        }).mount("#adminContainer");
+    </script>
+}
