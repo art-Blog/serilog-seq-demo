@@ -1,3 +1,6 @@
+using Microsoft.Extensions.DependencyInjection;
+using Polly;
+using Polly.Extensions.Http;
 using seq_demo.Filters;
 using seq_demo.Helper;
 using Serilog;
@@ -6,6 +9,8 @@ using serilog_seq_demo.Adapter.Common;
 using serilog_seq_demo.Common.Utility;
 using serilog_seq_demo.Core.Module.Admin;
 using serilog_seq_demo.Core.Module.Admin.Implement;
+using serilog_seq_demo.Core.Module.Message;
+using serilog_seq_demo.Core.Module.Message.Implement;
 using serilog_seq_demo.DataServices.DAI;
 using serilog_seq_demo.DataServices.DAO;
 
@@ -14,7 +19,7 @@ Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
     .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
     // Filter out ASP.NET Core infrastructre logs that are Information and below
-    .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Warning) 
+    .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Warning)
     .Enrich.FromLogContext()
     .WriteTo.Console()
     .WriteTo.Seq("http://localhost:5341")
@@ -23,25 +28,32 @@ Log.Logger = new LoggerConfiguration()
 try
 {
     var builder = WebApplication.CreateBuilder(args);
-    
     DBConfig.Configure(builder.Services);
-    
+
     // 使用 Serilog
     builder.Host.UseSerilog();
+
 
     // DI
     builder.Services.AddScoped<IAdminDAO, AdminDAO>();
     builder.Services.AddScoped<IAdminModule, AdminModule>();
-    
+    builder.Services.AddScoped<IMessageModule, MessageModule>();
+
     // Add services to the container.
     builder.Services.AddControllersWithViews(config =>
     {
         // 註冊 serilog action filter
         config.Filters.Add(typeof(SerilogLoggingActionFilter));
     });
-    
+
+    builder.Services.AddHttpClient();
+
+    builder.Services.AddHttpClient<IMessageModule, MessageModule>()
+        .SetHandlerLifetime(Timeout.InfiniteTimeSpan)
+        .AddPolicyHandler(GetCircuitBreakerPolicy());
+
     ServiceLocator.SetLocatorProvider(builder.Services.BuildServiceProvider());
-    
+
     var app = builder.Build();
 
     // Configure the HTTP request pipeline.
@@ -53,7 +65,7 @@ try
     }
 
     app.UseHttpsRedirection();
-    
+
     app.UseStaticFiles();
     // 設置 Serilog
     app.UseSerilogRequestLogging(options =>
@@ -62,7 +74,7 @@ try
         options.EnrichDiagnosticContext = LogHelper.EnrichFromRequest;
         options.GetLevel = LogHelper.CustomGetLevel;
     });
-    
+
     app.UseRouting();
     app.UseAuthorization();
     app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
@@ -76,4 +88,22 @@ catch (Exception e)
 finally
 {
     Log.CloseAndFlush();
+}
+
+static IAsyncPolicy<HttpResponseMessage> GetCircuitBreakerPolicy()
+{
+    return HttpPolicyExtensions
+        .HandleTransientHttpError()
+        .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.NotFound)
+        .CircuitBreakerAsync(1, TimeSpan.FromSeconds(30),
+            (e,t,c)=>
+            {
+                Log.Information("過載保護");
+                Console.WriteLine("過載保護");
+            },
+            c=>
+            {
+                Log.Information("恢復正常");
+                Console.WriteLine("恢復正常");
+            });
 }
